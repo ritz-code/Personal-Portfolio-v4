@@ -1,0 +1,37 @@
+@import "./variables";
+
+.loadingContainer {
+  height: 100vh;
+  width: 100%;
+  background: #edeae5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .loading {
+    color: rgb(44, 40, 40);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    transform: transition 1s all;
+    animation: flicker 2s infinite ease-in-out;
+  }
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .loadingContainer .loading {
+    font-size: 0.7rem;
+  }
+}

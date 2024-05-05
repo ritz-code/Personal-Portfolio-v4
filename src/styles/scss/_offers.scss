@@ -1,0 +1,132 @@
+@import "./_variables";
+
+#offers {
+    width: 100%;
+    @include flexprop(row, center, center);
+    .offerContainerWrapper {
+        background-color: var(--background-color);
+        width: 100%;
+
+        h2 {
+            margin-top: 0;
+        }
+        .offerContainer {
+            background-color: white;
+            width: 90%;
+            border: 2px dashed var(--lt-color-font);
+            @include flexprop(row, center, center);
+            .offerContainerLeft {
+                @include flexprop(column, center, center);
+                position: relative;
+                border-radius: var(--blob-border-radius);
+                background: var(--ltest-mint-linear-gradient);
+                margin: 1rem;
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 82%;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    border-radius: var(--blob-border-radius);
+                    background: var(--lt-mint-linear-gradient);
+                }
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 15%;
+                    width: 2rem;
+                    height: 2rem;
+                    border-radius: var(--blob-border-radius);
+                    background: var(--lt-mint-linear-gradient);
+                }
+            }
+            .offerContainerRight {
+                //border: 2px solid green;
+                padding: var(--m-padding);
+
+                h2 {
+                    font-size: 2rem;
+                    text-shadow: 0 1px #808d93, -1px 0 #cdd2d5, -1px 2px #808d93, -2px 1px #cdd2d5;
+                }
+                .offerHeadingMarginBottom {
+                    margin-bottom: 2rem;
+                }
+                .offerLists {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                    max-width: 90%;
+
+                    .offerCard {
+                        position: relative;
+                        background-color: var(--card-bg);
+                        width: 45%;
+                        max-width: 250px;
+                        min-height: 200px;
+                        padding: 1rem;
+                        margin: 0 var(--xxs-margin);
+                        transition: all 0.5s ease-in-out;
+                        letter-spacing: 0.01em;
+          
+                        .dataHeading {
+                            margin-bottom: var(--xs-margin);
+                            &:before {
+                                content: "";
+                                position: absolute;
+                                top: 17px;
+                                left: -10px;
+                                width: 1rem;
+                                height: 1rem;
+                                border-radius: var(--blob-border-radius);
+                                background: var(--lt-mint-linear-gradient);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    #offers .offerContainerWrapper .offerContainer {
+            @include flexprop(column, center, center);
+    
+            .offerContainerRight {
+    
+                h2 {
+                    font-size: 2.8rem;
+                }
+            }
+        }
+}
+
+@media (min-width: 350px) and (max-width: 500px) {
+    #offers .offerContainerWrapper {
+        width: 100%;
+        .offerContainer {
+            @include flexprop(column, center, center);
+
+            .offerContainerRight {
+                @include flexprop(column, center, center);
+    
+                h2 {
+                    font-size: 1.5rem;
+                }
+                p, .offerCard {
+                    padding: 0 0.5rem;
+                    width: 100vw!important;
+                }
+                .offerLists .offerCard {
+                    margin-bottom: -10px;
+                 //   bordeR: 2px solid red;
+                }
+    
+            }
+        }
+    }
+}

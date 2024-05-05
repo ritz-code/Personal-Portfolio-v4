@@ -1,0 +1,121 @@
+@import "./_variables";
+
+#paymentPlan {
+    width: 100%;
+    margin-top: 10rem;
+ 
+    @include flexprop(row, space-around, center);
+    .paymentContainerWrapper {
+        position: relative;
+
+        .paymentContainer {
+            @include flexprop(row, space-around, center);
+            .planCard {
+                @include flexprop(column, space-around, center);
+               // padding: 1.2rem;
+                border-radius: var(--m-border-radius);
+                box-shadow: var(--card-shadow-s);
+                background-color: var(--card-bg);
+                width: 32%;
+                min-height: 200px;
+                box-shadow: var(--card-shadow-dark);
+                margin: var(--m-margin) 0;
+                transition: all 0.5s ease-in-out;
+                letter-spacing: var(--letter-spacing);
+
+                .headingAndPrice {
+                    @include flexprop(row, space-around, center);
+                    border-bottom: 2px dashed var(--lt-color-font);
+                    width: 100%;
+                    margin-top: 1.5rem;
+
+                    .heading  h3 {
+                        font-weight: 600;
+                    }
+                    .heading p {
+                        margin-top: -10px;
+                    }
+                    .priceBox .price {
+                        font-size: 2rem;
+                        color: var(--font-mint-green);
+                    }
+                }
+                .endContainer {
+                    width: 100%;
+                    padding-top: 1.5rem;
+                    padding: 1.2rem;
+                    ul li:nth-child(n){
+                        position: relative;
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            top: 14px;
+                            left: -10px;
+                            width: 0.25rem;
+                            height: 0.25rem;
+                            border-radius: var(--blob-border-radius);
+                            background: var(--mint-green);
+                        }
+                    }
+                    .btnContainer{
+                        margin: var(--s-margin);
+                        @include flexprop(row, space-around, center);
+    
+                        .planBtn {
+                            margin-top: var(--xxs-margin);
+                            padding: 0.75rem;
+                            font-weight: 600;
+                            font-size: var(--s-font);
+                            line-height: 1.2rem;
+                            border: transparent;
+                            cursor: pointer;
+                            letter-spacing: 2px;
+                            color: var(--lt-color-heading);
+                            background: var(--lt-mint-linear-gradient);
+                            border-radius: var(--s-border-radius);
+                            letter-spacing: var(--letter-spacing);
+                            box-shadow: var(--box-shadow);
+                        }
+                    }
+                    &:hover, &:focus{
+                        background: var(--lt-mint-linear-gradient);
+                        color: #fff!important;
+                        border-radius: var(--m-border-radius);
+                        transition: all 0.5s ease-in-out;
+                        .btnContainer .planBtn {
+                            scale: 1.05;
+                            background: var(--background-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 760px) {
+    #paymentPlan .paymentContainerWrapper .paymentContainer {
+            @include flexprop(column, space-around, center);
+            width: 100%;
+
+            .planCard {
+                @include flexprop(column, center, center);
+                margin: var(--xs-margin);
+                width: 80%;
+                box-shadow: var(--card-shadow-dark);
+                transition: all 0.5s ease-in-out;
+                letter-spacing: var(--letter-spacing);
+
+                .headingAndPrice {
+                    padding-top: 1rem;
+                }
+
+                .endContainer {
+                    margin: 0.5rem;
+                    ul li {
+                        font-size: 0.8rem!important;
+                    }
+                }
+            }
+    }
+}

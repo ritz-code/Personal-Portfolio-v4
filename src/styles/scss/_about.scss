@@ -1,0 +1,82 @@
+@import "./_variables";
+
+#about {
+  @include flexprop(column, center, center);
+  margin-top: -25rem;
+
+  .aboutContainer {
+    position: relative;
+    @include flexprop(column, center, center);
+    width: 90%;
+    max-width: var(--max-width);
+
+    h3 {
+      margin-top: 150px;
+    }
+    h2 {
+      margin-top: 0;
+      margin-bottom: 50px;
+    }
+
+    .rotatingWrapper {
+      position: absolute;
+      top: 45%;
+      right: -35%;
+      height: 70vh;
+      width: 70vh;
+      z-index: 1;
+  
+      .rotatingCircle {
+        position: relative;
+        height: 70vh;
+        width: 70vh;
+        border-radius: 50%;
+        background-color: var(--lt-orange);
+        animation: rotation 30s linear infinite;
+        &::before {
+          content: "";
+          @include centering;
+          position: absolute;
+          height: 40vh;
+          width: 40vh;
+          border-radius: var(--blob2-border-radius);
+          background-color: var(--md-yellow);
+          border: 5px solid transparent;
+          border: 7px dotted var(--md-yellow);
+        }
+        &::after {
+          content: "";
+          @include centering;
+          position: absolute;
+          height: 20vh;
+          width: 20vh;
+          border-radius: var(--blob2-border-radius);
+          background: radial-gradient(var(--lt-orange), var(--dark-orange) 95%);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .aboutContainer {
+    p {
+      line-height: 1.5rem;
+    }
+  }
+}
+@media (min-width: 1024px) {
+  .aboutContainer .rotatingWrapper {
+    top: 45%;
+    right: 5%;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

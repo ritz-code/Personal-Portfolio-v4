@@ -1,0 +1,21 @@
+@import "./_variables";
+
+.footerContainer {
+  position: fixed;
+  bottom: 0;
+  
+  @include flexprop(row, center, center);
+  width: 100%;
+    @include flexprop(column, center, center);
+    p {
+      padding: 1px;
+      display: block;
+      font-size: 0.7rem!important;
+      line-height: 0.8rem;
+    }
+}
+@media (max-width: 600px) {
+  .footerContainer p {
+    padding: 0;
+  } 
+}

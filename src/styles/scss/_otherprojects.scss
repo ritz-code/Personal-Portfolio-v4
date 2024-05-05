@@ -1,0 +1,68 @@
+@import "./variables";
+
+.otherprojectsContainer {
+  h2{
+    margin-top: -50px;
+  }
+  .projectsWrapper {
+    @include flexprop(row, space-around, center);
+    width: 80%;
+    margin-top: -450px!important;
+    //flex-wrap: wrap;
+    flex: 1;
+    max-width: $max-width;
+
+    .projectCard {
+      @include flexprop(column, center, center);
+      max-width: 250px;
+      box-shadow: var(--card-shadow-s);
+      margin-bottom: var(--s-margin);
+      border-radius: var(--m-border-radius);
+      .cardImg {
+        width: 100%;
+        overflow-y: hidden;
+        height: 20vh;
+        border-top-left-radius: var(--m-border-radius);
+        border-top-right-radius: var(--m-border-radius);
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .cardDetails {
+        padding: var(--s-padding);
+        h5 {
+          font-weight: 700;
+          margin-bottom: var(--xxs-margin);
+          border-bottom: 1px solid rgb(233, 232, 232);
+        }
+        .cardText {
+          font-size: 0.9rem!important;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .otherprojectsContainer .projectsWrapper {
+    width: 95vw;
+    .projectCard {
+      margin: 0;
+      .cardDetails {
+        h5 {
+          margin-top: -1.5rem;
+          font-weight:300;
+          font-size: 0.4rem!important;
+          margin-bottom: var(--xxs-margin);
+        }
+        .cardText {
+          font-size: 0.3rem!important;
+          margin-bottom: -1rem;
+          line-height: 0.5rem !important;
+        }
+      }
+    }
+  }
+}
