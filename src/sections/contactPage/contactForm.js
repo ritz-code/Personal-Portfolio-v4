@@ -43,7 +43,7 @@ function ContactForm() {
                         </form>
                     </div>
                     <div className="contactImageWrapper">
-                        <img className="contactImage" width="450" height="300" src="/svg/monitor.svg" alt="Website development image" />
+                        <img className="contactImage" width="450" height="300" src="/svg/monitor.svg" alt="computer monitor" />
                         <div class="borderGroup">
                             <h3>Email:</h3>
                             <p>info.riturawat.dev@gmail.com</p>

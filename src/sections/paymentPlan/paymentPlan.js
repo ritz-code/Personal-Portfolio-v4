@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import '../../styles/scss/_paymentPlan.scss'
 import { paymentPlanList } from "../../data/constants";
 
